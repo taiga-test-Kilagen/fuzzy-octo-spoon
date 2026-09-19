@@ -1,0 +1,54 @@
+{
+  "assignment_id": "hw03",
+  "generated_at": "2026-09-19T11:44:10.271810Z",
+  "entries": [
+    {
+      "rank": 1,
+      "pokemon": {
+        "pokemon_id": 29,
+        "name": "Nidoran F",
+        "sprite": "assets/pokemon/29.png"
+      },
+      "score": 100.0,
+      "uncapped_score": 1356.2014710561148,
+      "mae": 0.23266666666666666,
+      "model_size_mb": 0.00671,
+      "predict_seconds": 0.010591657,
+      "mae_points": 90.28627450980393,
+      "model_size_points": 774.9627421758569,
+      "predict_time_points": 490.952454370454
+    },
+    {
+      "rank": 2,
+      "pokemon": {
+        "pokemon_id": 702,
+        "name": "Dedenne",
+        "sprite": "assets/pokemon/702.png"
+      },
+      "score": 100.0,
+      "uncapped_score": 100.64373718242376,
+      "mae": 0.5113333333333333,
+      "model_size_mb": 1.266332,
+      "predict_seconds": 0.11830799,
+      "mae_points": 52.584313725490205,
+      "model_size_points": 4.106348098287021,
+      "predict_time_points": 43.95307535864653
+    },
+    {
+      "rank": 3,
+      "pokemon": {
+        "pokemon_id": 341,
+        "name": "Corphish",
+        "sprite": "assets/pokemon/341.png"
+      },
+      "score": 5.9980392156862745,
+      "uncapped_score": 5.9980392156862745,
+      "mae": 0.8556666666666667,
+      "model_size_mb": 19.322108,
+      "predict_seconds": 0.341186543,
+      "mae_points": 5.9980392156862745,
+      "model_size_points": 0.0,
+      "predict_time_points": 0.0
+    }
+  ]
+}

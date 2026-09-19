@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Обезличенный лидерборд ЛР 3 по оптимизации KNN.">
+    <meta name="color-scheme" content="light dark">
+    <title>Лидерборд KNN · ЛР 3</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23dc3d4b'/%3E%3Cpath d='M4 32h56' stroke='%23181a20' stroke-width='8'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23f7f3e8' stroke='%23181a20' stroke-width='6'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">ЛР 3 · Оптимизация KNN</p>
+          <h1>Покедекс решений</h1>
+        </div>
+        <div class="sync" aria-live="polite">
+          <span class="sync-dot" aria-hidden="true"></span>
+          <span id="updated">Загрузка результатов…</span>
+        </div>
+      </header>
+
+      <section id="podium" class="podium" aria-label="Три лучших результата" hidden></section>
+
+      <section class="board" aria-labelledby="board-title">
+        <div class="board-head">
+          <div>
+            <h2 id="board-title">Все участники</h2>
+            <p id="summary">Лучший результат каждого студента</p>
+          </div>
+          <div class="legend" aria-label="Показатели">
+            <span>MAE ↓</span><span>размер ↓</span><span>predict ↓</span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Место</th>
+                <th scope="col">Покемон</th>
+                <th scope="col" class="numeric">Итог</th>
+                <th scope="col" class="numeric">MAE</th>
+                <th scope="col" class="numeric">Модель</th>
+                <th scope="col" class="numeric">Predict</th>
+                <th scope="col">Баллы по частям</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <div id="empty" class="empty" hidden>
+            <strong>Проверенных решений пока нет</strong>
+            <span>Таблица появится после первой успешной проверки.</span>
+          </div>
+          <div id="error" class="empty error" role="alert" hidden>
+            <strong>Не удалось загрузить результаты</strong>
+            <span>Показываем страницу без данных. Попробуйте обновить её позже.</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Покемон — постоянный псевдоним студента. В таблице нет GitHub-логинов и ссылок на репозитории.</p>
+        <p>Данные обновляются каждые 15 минут.</p>
+      </footer>
+    </main>
+  </body>
+</html>
