@@ -69,6 +69,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--red) 5%, transparent); }
 .parts { display: flex; gap: 8px; flex-wrap: wrap; font: .78rem/1.25 ui-monospace, monospace; }
 .parts span { white-space: nowrap; }
 .parts strong { color: var(--red-deep); }
+.parts .official { color: var(--muted); }
 .empty { display: grid; gap: 6px; place-items: center; padding: 60px 20px; color: var(--muted); text-align: center; }
 .empty strong { color: var(--ink); font-size: 1.05rem; }
 .error strong { color: var(--red-deep); }

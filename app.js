@@ -40,10 +40,10 @@ function renderPodium(entries) {
     rank.textContent = entry.rank;
     const score = document.createElement("div");
     score.className = "podium-score";
-    score.textContent = `${number(entry.score, 2)} / 100`;
+    score.textContent = number(entry.uncapped_score, 2);
     const metrics = document.createElement("div");
     metrics.className = "podium-metrics";
-    metrics.textContent = `MAE ${number(entry.mae, 4)} · ${number(entry.predict_seconds, 3)} с`;
+    metrics.textContent = `официально ${number(entry.score, 2)} / 100 · MAE ${number(entry.mae, 4)} · ${number(entry.predict_seconds, 3)} с`;
     card.append(rank, pokemonNode(entry), score, metrics);
     podium.append(card);
   }
@@ -66,7 +66,7 @@ function renderRows(entries) {
     rank.textContent = entry.rank;
     const pokemon = document.createElement("td");
     pokemon.append(pokemonNode(entry, "table-pokemon"));
-    const score = metricCell(entry.score, 2);
+    const score = metricCell(entry.uncapped_score, 2);
     score.classList.add("score");
     const parts = document.createElement("td");
     const breakdown = document.createElement("div");
@@ -83,6 +83,10 @@ function renderRows(entries) {
       item.append(strong);
       breakdown.append(item);
     }
+    const official = document.createElement("span");
+    official.className = "official";
+    official.textContent = `официально ${number(entry.score, 2)} / 100`;
+    breakdown.append(official);
     parts.append(breakdown);
     row.append(
       rank,
@@ -105,7 +109,7 @@ async function load() {
     if (!snapshot || !Array.isArray(snapshot.entries)) throw new Error("Invalid leaderboard data");
     renderPodium(snapshot.entries);
     renderRows(snapshot.entries);
-    summary.textContent = `Лучший результат каждого студента · участников: ${snapshot.entries.length}`;
+    summary.textContent = `Рейтинг без потолка · лучший результат каждого студента · участников: ${snapshot.entries.length}`;
     updated.textContent = `Обновлено ${new Date(snapshot.generated_at).toLocaleString("ru-RU")}`;
     empty.hidden = snapshot.entries.length !== 0;
     error.hidden = true;
