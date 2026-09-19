@@ -43,7 +43,7 @@ function renderPodium(entries) {
     score.textContent = number(entry.uncapped_score, 2);
     const metrics = document.createElement("div");
     metrics.className = "podium-metrics";
-    metrics.textContent = `официально ${number(entry.score, 2)} / 100 · MAE ${number(entry.mae, 4)} · ${number(entry.predict_seconds, 3)} с`;
+    metrics.textContent = `оценка ${number(entry.score, 2)} / 100 · MAE ${number(entry.mae, 4)} · ${number(entry.predict_seconds, 3)} с`;
     card.append(rank, pokemonNode(entry), score, metrics);
     podium.append(card);
   }
@@ -85,7 +85,7 @@ function renderRows(entries) {
     }
     const official = document.createElement("span");
     official.className = "official";
-    official.textContent = `официально ${number(entry.score, 2)} / 100`;
+    official.textContent = `оценка ${number(entry.score, 2)} / 100`;
     breakdown.append(official);
     parts.append(breakdown);
     row.append(
@@ -109,7 +109,7 @@ async function load() {
     if (!snapshot || !Array.isArray(snapshot.entries)) throw new Error("Invalid leaderboard data");
     renderPodium(snapshot.entries);
     renderRows(snapshot.entries);
-    summary.textContent = `Рейтинг без потолка · лучший результат каждого студента · участников: ${snapshot.entries.length}`;
+    summary.textContent = `Участников: ${snapshot.entries.length}`;
     updated.textContent = `Обновлено ${new Date(snapshot.generated_at).toLocaleString("ru-RU")}`;
     empty.hidden = snapshot.entries.length !== 0;
     error.hidden = true;
